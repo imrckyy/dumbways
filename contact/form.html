@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/week 1/contact/form.css">
+</head>
+
+<body>
+    <nav>
+        <ul class="nav">
+            <li>
+                <img src="https://dumbways.id/assets/images/brandred.png" alt="profile.img">
+            </li>
+            <li>
+                <a href="/week 1/index.html" class="left">Home</a>
+            </li>
+            <li>
+                <a href="/week 1/project/project.html" class="left-project">My Project</a>
+            </li>
+            <li class="right">
+                <a href="/week 1/contact/form.html">Contact Me</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- =================== -->
+     
+    <h2>GET IN TOUCH</h2>
+
+    <form onsubmit="getData(event)">
+        <div>
+            <label for="nameInput">Name</label>
+            <input id="nameInput" type="text" placeholder="input ur name" required />
+        </div>
+
+        <div>
+            <label for="emailInput">Email</label>
+            <input id="emailInput" type="email" placeholder="input ur email" required />
+        </div>
+
+        <div>
+            <label for="phoneNumber">Phone Number</label>
+            <input id="phoneNumber" type="tel" placeholder="ur phone number" />
+        </div>
+
+        <div>
+            <label for="subject">Subject</label>
+            <select id="subject">
+                <option value="">option</option>
+                <option value="feDev">Frontend Developer</option>
+                <option value="beDev">Backend Developer</option>
+                <option>Fullstack Developer</option>
+                <option>Cyber Security</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="massage">Your Massage</label>
+            <textarea id="massage" placeholder="ur massage" rows="4"></textarea>
+        </div>
+
+        <div>
+            <button type="button" onclick="getData()">Submit</button>
+        </div>
+    </form>
+
+    <script src="/week 1/contact/script.js"></script>
+</body>
+
+</html>
