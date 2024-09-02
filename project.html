@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="project.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <nav>
+        <ul class="nav">
+            <li>
+                <img src="https://dumbways.id/assets/images/brandred.png" alt="profile.img">
+            </li>
+            <li>
+                <a href="index.html" class="left">Home</a>
+            </li>
+            <li>
+                <a href="project.html" class="left-project">My Project</a>
+            </li>
+            <li class="right">
+                <a href="form.html">Contact Me</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- =================== -->
+    <h2>ADD MY PROJECT</h2>
+
+    <form onsubmit="project(event)">
+        <div>
+            <label for="nameInput">Project Name</label>
+            <input id="nameInput" type="text" placeholder="enter your name!!" />
+        </div>
+    
+        <div class="date">
+            <div>
+                <label for="startDate">Start Date</label>
+                <input type="date" id="startDate" required>
+            </div>
+            <div>
+                <label for="endDate">End Date</label>
+                <input type="date" id="endDate" required>
+            </div>
+        </div>
+    
+        <div>
+            <label for="message">Description</label>
+            <textarea id="message" rows="6"></textarea>
+        </div>
+    
+        <div class="option">
+            <input type="radio" name="technologies" id="dot-1" value="Node Js">
+            <input type="radio" name="technologies" id="dot-2" value="React Js">
+            <input type="radio" name="technologies" id="dot-3" value="Next Js">
+            <label>technologies</label>
+    
+            <div class="category">
+                <label for="dot-1">
+                    <span class="dot one"></span>
+                    <span class="technologies">Node Js</span>
+                </label>
+                <label for="dot-2">
+                    <span class="dot two"></span>
+                    <span class="technologies">React Js</span>
+                </label>
+                <label for="dot-3">
+                    <span class="dot three"></span>
+                    <span class="technologies">Next Js</span>
+                </label>
+            </div>
+        </div>
+    
+        <div>
+            <label>Upload Image</label>
+            <div class="images">
+                <label for="image">
+                    <p style="font-size: 15px; cursor: pointer;">Choose
+                        <i class="fa-solid fa-paperclip fa-lg" style="color: #000000; margin-left: 400px;"></i>
+                    </p>
+                </label>
+                <input type="file" id="image" multiple hidden />
+            </div>
+        </div>
+    
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+    
+    <div id="contents"></div>
+    
+
+    <script src="project.js"></script>
+</body>
+
+</html>
+
+</body>
+
+</html>
