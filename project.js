@@ -32,6 +32,7 @@ function project(event) {
     }
 }
 
+
 // ================
 
 function renderBlog() {
@@ -77,7 +78,7 @@ function getFullTime(date) {
 }
 
 function getDistanceTime(date) {
-    const now = new Date();
+    const now = new Date(); 
     const distance = Math.abs(now - date);
     const minutes = Math.floor(distance / (1000 * 60));
     if (minutes < 60) return `${minutes} minutes ago`;
@@ -87,11 +88,17 @@ function getDistanceTime(date) {
     return `${days} days ago`;
 }
 
-function editPost(index) {
-    // Implement edit functionality here
-}
-
 function deletePost(index) {
     blog.splice(index, 1);
     renderBlog();
 }
+
+setInterval( () => {
+    renderBlog();
+}, 1000
+);
+
+function editPost(index) {
+    // Implement edit functionality here
+}
+
