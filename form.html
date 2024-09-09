@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -21,12 +24,22 @@
                 <a href="project.html" class="left-project">My Project</a>
             </li>
             <li class="right">
+                <button class="humberger-button" onclick="toggleHumberger()">
+                    <i class="fa-solid fa-bars fa-xl" style="color: #000000;"></i>
+                </button>
                 <a href="form.html">Contact Me</a>
             </li>
         </ul>
+
+        <div id="humberger-container" class="humberger-container humberger-hide">
+            <a href="index.html">Home</a>
+            <a href="project.html">My Project</a>
+            <a href="form.html" class="humberger-active">Contact Me</a>
+        </div>
     </nav>
 
-     
+     <!-- ===================================== -->
+
     <h2>GET IN TOUCH</h2>
 
     <form onsubmit="getData(event)">
@@ -67,6 +80,7 @@
     </form>
 
     <script src="script.js"></script>
+    <script src="nav.js"></script>
 </body>
 
 </html>

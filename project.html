@@ -24,9 +24,18 @@
                 <a href="project.html" class="left-project">My Project</a>
             </li>
             <li class="right">
+                <button class="humberger-button" onclick="toggleHumberger()">
+                    <i class="fa-solid fa-bars fa-xl" style="color: #000000;"></i>
+                </button>
                 <a href="form.html">Contact Me</a>
             </li>
         </ul>
+
+        <div id="humberger-container" class="humberger-container humberger-hide">
+            <a href="index.html">Home</a>
+            <a href="project.html" class="humberger-active">My Project</a>
+            <a href="form.html">Contact Me</a>
+        </div>
     </nav>
 
     <!-- =================== -->
@@ -81,8 +90,8 @@
             <label>Upload Image</label>
             <div class="images">
                 <label for="image">
-                    <p style="font-size: 15px; cursor: pointer;">Choose
-                        <i class="fa-solid fa-paperclip fa-lg" style="color: #000000; margin-left: 400px;"></i>
+                    <p class="flex-container">Choose
+                        <i class="fa-solid fa-paperclip fa-lg" style="color: #000000; margin-left: auto;"></i>
                     </p>
                 </label>
                 <input type="file" id="image" multiple hidden />
@@ -98,6 +107,7 @@
     
 
     <script src="project.js"></script>
+    <script src="nav.js"></script>
 </body>
 
 </html>

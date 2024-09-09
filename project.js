@@ -4,24 +4,42 @@ function project(event) {
     event.preventDefault();
 
     let name = document.getElementById('nameInput').value;
-    let sdate = document.getElementById('startDate').value;
-    let edate = document.getElementById('endDate').value;
+    let startdate = document.getElementById('startDate').value;
+    let enddate = document.getElementById('endDate').value;
     let pesan = document.getElementById('message').value;
     let option = document.querySelector('input[name="technologies"]:checked').value;
     let images = document.getElementById('image').files;
+
+    if(startdate > enddate)
+        {
+          return alert("Start date cannot started earlier than end date");
+        }
+        let timeDifferencesMs = new Date(enddate) - new Date(startdate);
+        let differencesDay = Math.floor(timeDifferencesMs / (1000 * 60 * 60 * 24));
+        let differenceMonth = Math.floor(differencesDay / 30.437);
+        let differenceYear = Math.floor(differenceMonth / 12);
+        let dateDifferences;
+        if (differenceYear > 0) {
+          dateDifferences = `${differenceYear} Year ${differenceMonth%12} Month ${differencesDay%30} Day`;
+        } else if (differenceMonth > 0) {
+          dateDifferences = `${differenceMonth%12} Month ${differencesDay%30} Day`;
+        } else {
+          dateDifferences = `${differencesDay%30} Day`;
+        }
 
     if (images.length > 0) {
         let inputImage = URL.createObjectURL(images[0]);
 
         let data = {
             nama: name,
-            start: sdate,
-            end: edate,
+            start: startdate,
+            end: enddate,
             description: pesan,
             subject: option,
             file: inputImage,
             createdAt: new Date(),
             author: "Ricky Pranata",
+            duration: dateDifferences,
         };
 
         blog.unshift(data);
@@ -49,8 +67,8 @@ function renderBlog() {
                         <h1>
                             <a href="blog-detail.html" target="_blank">${blog[index].nama}</a>
                         </h1>
-                        <div>Duration :</div>
-                        <div>${blog[index].start} - ${blog[index].end}</div>
+                        <div >Duration :</div>
+                        <div style =" font-size: 14px";>${blog[index].duration}</div>
                         <div class="detail-blog-content">
                             ${getFullTime(blog[index].createdAt)} | ${blog[index].author}
                         </div>

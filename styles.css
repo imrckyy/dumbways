@@ -37,12 +37,18 @@ body {
     color: inherit;
 }
 
-.left:hover, .left-project:hover {
-    color: rgb(7, 179, 64); /* Ubah warna teks saat di-hover */
-    background-color: lightgray; /* Tambahkan latar belakang saat di-hover */
-    padding: 7px 10px; /* Tambahkan padding untuk memberi ruang lebih saat di-hover */
-    border-radius: 8px; /* Tambahkan border-radius untuk sudut yang melengkung */
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); /* Tambahkan shadow untuk efek 3D */
+.left:hover,
+.left-project:hover {
+    color: rgb(7, 179, 64);
+    /* Ubah warna teks saat di-hover */
+    background-color: lightgray;
+    /* Tambahkan latar belakang saat di-hover */
+    padding: 7px 10px;
+    /* Tambahkan padding untuk memberi ruang lebih saat di-hover */
+    border-radius: 8px;
+    /* Tambahkan border-radius untuk sudut yang melengkung */
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    /* Tambahkan shadow untuk efek 3D */
     transition: 0.5s;
 }
 
@@ -66,8 +72,59 @@ body {
     background-color: rgb(7, 179, 64);
     box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
     transition: 0.5s;
-    transform: scale(1.05);/* Sedikit mengecilkan elemen saat diklik */
-    color: black; /* Ubah warna teks saat di-hover */
+    transform: scale(1.05);
+    /* Sedikit mengecilkan elemen saat diklik */
+    color: black;
+    /* Ubah warna teks saat di-hover */
+}
+
+.humberger-button {
+    display: none;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.humberger-button:hover {
+    background-color: rgb(7, 179, 64); /* Ubah warna latar belakang saat hover */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Tambahkan bayangan lembut */
+    transition: background-color 0.3s ease; /* Efek transisi halus */
+}
+
+.humberger-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.humberger-container a {
+    width: 100%;
+    background-color: lightgreen;
+    color: #fffefe;
+    padding: 15px 0;
+    border: 1px solid black;
+    box-shadow: 0 0 2px;
+    text-decoration: none;
+}
+
+.humberger-container .humberger-active{
+    background-color: rgb(7, 179, 64);
+    color: #000000;
+}
+
+.humberger-hide{
+    display: none;
+}
+
+@media screen and (max-width: 720px) {
+    nav li a {
+        display: none;
+    }
+
+    .humberger-button {
+        display: block;
+    }
 }
 
 /* ================================ */
@@ -100,12 +157,12 @@ body {
     text-align-last: center;
 }
 
-.buttons{
+.buttons {
     margin: 30px 0 0 0;
     cursor: pointer;
 }
 
-.buttons button{
+.buttons button {
     background-color: black;
     color: white;
     padding: 4px 20px;
@@ -119,8 +176,10 @@ body {
     background-color: rgb(7, 179, 64);
     box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
     transition: 0.5s;
-    transform: scale(1.05);/* Sedikit mengecilkan elemen saat diklik */
-    color: black; /* Ubah warna teks saat di-hover */
+    transform: scale(1.05);
+    /* Sedikit mengecilkan elemen saat diklik */
+    color: black;
+    /* Ubah warna teks saat di-hover */
 }
 
 
@@ -129,13 +188,13 @@ body {
     color: #ffffff;
 }
 
-.icon{
+.icon {
     display: flex;
     margin: 50px 30px 0 10px;
     gap: 35px;
 }
 
-.card{
+.card {
     text-align: center;
     box-shadow: 5px 5px 20px;
     border-radius: 10px;
@@ -158,4 +217,49 @@ body {
 .card p {
     color: #666666;
     margin: 0;
+}
+
+/* ====responsive======================== */
+
+@media screen and (max-width: 720px) {
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .box {
+        padding-right: 0;
+        /* Hilangkan padding kanan */
+        margin-bottom: 20px;
+        /* Tambahkan margin di bawahnya */
+    }
+
+    .card {
+        width: 100%;
+        /* Buat card mengambil seluruh lebar kontainer */
+        max-width: 290px;
+        /* Tambahkan max-width untuk menghindari terlalu lebar */
+        margin-bottom: 20px;
+        /* Beri jarak antar elemen */
+    }
+
+    .card img {
+        width: 100%;
+        /* Pastikan gambar memenuhi lebar card */
+        height: auto;
+        /* Sesuaikan tinggi gambar secara proporsional */
+    }
+
+    .icon {
+        display: flex;
+        justify-content: center;
+        /* Pusatkan ikon secara horizontal */
+        gap: 35px;
+        /* Jarak antar ikon tetap */
+        margin-top: 35px;
+        /* Sesuaikan jarak dari elemen lain */
+        margin-bottom: 15px;
+    }
 }

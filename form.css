@@ -37,12 +37,18 @@ body {
     color: inherit;
 }
 
-.left:hover, .left-project:hover {
-    color: rgb(7, 179, 64); /* Ubah warna teks saat di-hover */
-    background-color: lightgray; /* Tambahkan latar belakang saat di-hover */
-    padding: 7px 10px; /* Tambahkan padding untuk memberi ruang lebih saat di-hover */
-    border-radius: 8px; /* Tambahkan border-radius untuk sudut yang melengkung */
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); /* Tambahkan shadow untuk efek 3D */
+.left:hover,
+.left-project:hover {
+    color: rgb(7, 179, 64);
+    /* Ubah warna teks saat di-hover */
+    background-color: lightgray;
+    /* Tambahkan latar belakang saat di-hover */
+    padding: 7px 10px;
+    /* Tambahkan padding untuk memberi ruang lebih saat di-hover */
+    border-radius: 8px;
+    /* Tambahkan border-radius untuk sudut yang melengkung */
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    /* Tambahkan shadow untuk efek 3D */
     transition: 0.5s;
 }
 
@@ -66,8 +72,59 @@ body {
     background-color: rgb(7, 179, 64);
     box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
     transition: 0.5s;
-    transform: scale(1.05);/* Sedikit mengecilkan elemen saat diklik */
-    color: black; /* Ubah warna teks saat di-hover */
+    transform: scale(1.05);
+    /* Sedikit mengecilkan elemen saat diklik */
+    color: black;
+    /* Ubah warna teks saat di-hover */
+}
+
+.humberger-button {
+    display: none;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.humberger-button:hover {
+    background-color: rgb(7, 179, 64); /* Ubah warna latar belakang saat hover */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Tambahkan bayangan lembut */
+    transition: background-color 0.3s ease; /* Efek transisi halus */
+}
+
+.humberger-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.humberger-container a {
+    width: 100%;
+    background-color: lightgreen;
+    color: #fffefe;
+    padding: 15px 0;
+    border: 1px solid black;
+    box-shadow: 0 0 2px;
+    text-decoration: none;
+}
+
+.humberger-container .humberger-active{
+    background-color: rgb(7, 179, 64);
+    color: #000000;
+}
+
+.humberger-hide{
+    display: none;
+}
+
+@media screen and (max-width: 720px) {
+    nav li a {
+        display: none;
+    }
+
+    .humberger-button {
+        display: block;
+    }
 }
 
 /* ============================= */
@@ -79,7 +136,8 @@ h2 {
 }
 
 form {
-    width: 500px;
+    max-width: 500px;
+    width: 100%;
     margin: 10px auto;
 
 }
@@ -126,3 +184,9 @@ form button:hover {
     color: black; /* Ubah warna teks saat di-hover */
 }
 
+@media screen and (max-width: 720px) {
+    form {
+        width: 85%; /* Kurangi lebar form pada layar kecil */
+        padding: 0 10px; /* Sesuaikan padding untuk layar kecil */
+    }
+}
